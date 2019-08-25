@@ -1,7 +1,5 @@
 # Multi-modal Neural Machine Translation
-## OpenNMT-py: Open-Source Neural Machine Translation
 
-[![Build Status](https://travis-ci.org/OpenNMT/OpenNMT-py.svg?branch=master)](https://travis-ci.org/OpenNMT/OpenNMT-py)
 
 This is the implementation of **four different multi-modal neural machine translation models** described in the research papers [(1)](http://aclweb.org/anthology/D17-1105) and [(2)](https://aclweb.org/anthology/P/P17/P17-1175.pdf).
 They are based on the [Pytorch](https://github.com/pytorch/pytorch) port of [OpenNMT](https://github.com/OpenNMT/OpenNMT), an open-source (MIT) neural machine translation system.
@@ -66,7 +64,7 @@ We assume you have downloaded the [Multi30k data set](http://www.statmt.org/wmt1
 In order to extract the image features, run the following script:
 
 ```bash
-python extract_image_features.py --gpuid 0 --pretrained_cnn vgg19_bn --splits=train,valid,test --images_path /path/to/flickr30k/images/ --train_fnames /path/to/flickr30k/train_images.txt --valid_fnames /path/to/flickr30k/val_images.txt --test_fnames /path/to/flickr30k/test2016_images.txt
+python extract_image_features.py --gpuid 0 --pretrained_cnn vgg19_bn --splits=train,valid,test --images_path flickr30k/images/ --train_fnames flickr30k/train_images.txt --valid_fnames flickr30k/val_images.txt --test_fnames flickr30k/test2016_images.txt
 ```
 
 This will use GPU 0 to extract features with the pre-trained VGG19 with batch normalisation, for the training, validation and test sets of the Flickr30k. Change the name of the pre-trained CNN to any of the CNNs available under [this repository](https://github.com/Cadene/pretrained-models.pytorch), and the model will automatically use this CNN to extract features. **This script will extract both global and local visual features**.
